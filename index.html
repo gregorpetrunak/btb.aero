@@ -1,1 +1,586 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BTB – Bratislava-Bricksburg Airport">
+    <title>BTB | Bratislava-Bricksburg Airport</title>
 
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-inner">
+
+        <a href="#home" class="logo">
+            <div class="logo-icon">✈</div>
+            <div>
+                <strong>BTB</strong>
+                <span>Bratislava-Bricksburg</span>
+            </div>
+        </a>
+
+        <nav class="nav" id="nav">
+            <a href="#flights">Lety</a>
+            <a href="#airport">Letisko</a>
+            <a href="#map">Mapa</a>
+            <a href="#airlines">Aerolinky</a>
+            <a href="#services">Služby</a>
+            <a href="#transport">Doprava</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="languageBtn" class="small-btn">SK</button>
+            <button id="themeBtn" class="small-btn">☾</button>
+            <button id="menuBtn" class="menu-btn">☰</button>
+        </div>
+
+    </div>
+</header>
+
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="status-badge">
+            <span class="status-dot"></span>
+            LETISKO V PREVÁDZKE
+        </div>
+
+        <h1>
+            Vitajte na<br>
+            <span>Bratislava-Bricksburg</span>
+        </h1>
+
+        <p>
+            BTB Airport – moderné medzinárodné letisko
+            v srdci Bricksburgu.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#flights" class="primary-btn">Vyhľadať let</a>
+            <a href="#map" class="secondary-btn">Mapa letiska</a>
+        </div>
+
+    </div>
+
+    <div class="hero-plane">
+        <div class="plane-circle">
+            ✈
+        </div>
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+    </div>
+
+</section>
+
+
+<section class="quick-section">
+
+    <div class="quick-card">
+        <span class="quick-icon">🛫</span>
+        <div>
+            <small>ODLETY</small>
+            <strong id="departureCount">0</strong>
+        </div>
+    </div>
+
+    <div class="quick-card">
+        <span class="quick-icon">🛬</span>
+        <div>
+            <small>PRÍLETY</small>
+            <strong id="arrivalCount">0</strong>
+        </div>
+    </div>
+
+    <div class="quick-card">
+        <span class="quick-icon">🚪</span>
+        <div>
+            <small>GATEOV</small>
+            <strong>5</strong>
+        </div>
+    </div>
+
+    <div class="quick-card">
+        <span class="quick-icon">🌍</span>
+        <div>
+            <small>DESTINÁCIE</small>
+            <strong id="destinationCount">0</strong>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="section" id="flights">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">FLIGHT INFORMATION</span>
+            <h2>Vyhľadajte svoj let</h2>
+        </div>
+    </div>
+
+    <div class="flight-search">
+
+        <input
+            type="text"
+            id="flightSearch"
+            placeholder="Číslo letu, destinácia alebo aerolinka..."
+        >
+
+        <select id="flightType">
+            <option value="all">Všetky lety</option>
+            <option value="departure">Odlety</option>
+            <option value="arrival">Prílety</option>
+        </select>
+
+        <button class="primary-btn" id="searchFlightBtn">
+            🔎 Vyhľadať
+        </button>
+
+    </div>
+
+    <div class="flight-tabs">
+        <button class="flight-tab active" data-filter="all">Všetky</button>
+        <button class="flight-tab" data-filter="departure">Odlety</button>
+        <button class="flight-tab" data-filter="arrival">Prílety</button>
+    </div>
+
+    <div class="flight-table-wrapper">
+
+        <table class="flight-table">
+
+            <thead>
+                <tr>
+                    <th>Čas</th>
+                    <th>Let</th>
+                    <th>Smer</th>
+                    <th>Aerolinka</th>
+                    <th>Gate</th>
+                    <th>Stav</th>
+                </tr>
+            </thead>
+
+            <tbody id="flightTableBody"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<section class="section airport-section" id="airport">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">BTB AIRPORT</span>
+            <h2>O letisku</h2>
+        </div>
+    </div>
+
+    <div class="airport-grid">
+
+        <div class="airport-info-card">
+            <span class="big-icon">🏢</span>
+            <h3>1 terminál</h3>
+            <p>
+                Hlavný terminál BTB zabezpečuje odlety,
+                prílety aj všetky služby pre cestujúcich.
+            </p>
+        </div>
+
+        <div class="airport-info-card">
+            <span class="big-icon">🚪</span>
+            <h3>5 gateov</h3>
+            <p>
+                Gate A1 až A5 pre pravidelnú osobnú dopravu.
+            </p>
+        </div>
+
+        <div class="airport-info-card">
+            <span class="big-icon">📦</span>
+            <h3>Cargo zóna</h3>
+            <p>
+                Samostatná cargo časť pre nákladné lietadlá
+                a logistickú prevádzku.
+            </p>
+        </div>
+
+        <div class="airport-info-card">
+            <span class="big-icon">🅿️</span>
+            <h3>3 standy</h3>
+            <p>
+                Stojiská S1 až S3 pre lietadlá mimo nástupných
+                mostov.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section map-section" id="map">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">AIRPORT MAP</span>
+            <h2>Interaktívna mapa</h2>
+        </div>
+    </div>
+
+    <div class="airport-map">
+
+        <div class="runway runway-main">
+            <span>RWY 09/27</span>
+        </div>
+
+        <div class="taxiway taxi-1"></div>
+        <div class="taxiway taxi-2"></div>
+        <div class="taxiway taxi-3"></div>
+
+        <div class="terminal-map">
+            <div class="terminal-label">
+                TERMINÁL 1
+            </div>
+
+            <button class="map-gate gate-a1" data-gate="A1">A1</button>
+            <button class="map-gate gate-a2" data-gate="A2">A2</button>
+            <button class="map-gate gate-a3" data-gate="A3">A3</button>
+            <button class="map-gate gate-a4" data-gate="A4">A4</button>
+            <button class="map-gate gate-a5" data-gate="A5">A5</button>
+        </div>
+
+        <div class="cargo-zone">
+            CARGO
+        </div>
+
+        <div class="stand stand-1">S1</div>
+        <div class="stand stand-2">S2</div>
+        <div class="stand stand-3">S3</div>
+
+        <div class="map-legend">
+            <span><i class="legend-terminal"></i> Terminál</span>
+            <span><i class="legend-gate"></i> Gate</span>
+            <span><i class="legend-runway"></i> Runway</span>
+            <span><i class="legend-cargo"></i> Cargo</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="airlines">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">AIRLINES</span>
+            <h2>Letecké spoločnosti</h2>
+        </div>
+    </div>
+
+    <div class="airline-grid" id="airlineGrid"></div>
+
+</section>
+
+
+<section class="section services-section" id="services">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">PASSENGER SERVICES</span>
+            <h2>Služby na letisku</h2>
+        </div>
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <div>🧳</div>
+            <h3>Batožina</h3>
+            <p>
+                Check-in batožiny, príručná batožina
+                a informácie o stratenej batožine.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div>🍽️</div>
+            <h3>Reštaurácie</h3>
+            <p>
+                Občerstvenie pred odletom aj po prílete.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div>🛍️</div>
+            <h3>Obchody</h3>
+            <p>
+                Airport shop, suveníry a cestovné potreby.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div>📶</div>
+            <h3>Wi-Fi</h3>
+            <p>
+                Bezplatné Wi-Fi v celom termináli.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div>🅿️</div>
+            <h3>Parkovanie</h3>
+            <p>
+                Krátkodobé aj dlhodobé parkovanie.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div>♿</div>
+            <h3>Asistencia</h3>
+            <p>
+                Pomoc cestujúcim so zníženou mobilitou.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section transport-section" id="transport">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">GETTING HERE</span>
+            <h2>Doprava na letisko</h2>
+        </div>
+    </div>
+
+    <div class="transport-grid">
+
+        <div class="transport-card">
+            <span>🚗</span>
+            <h3>Autom</h3>
+            <p>
+                Letisko je dostupné po hlavnej cestnej
+                komunikácii Bratislava – Bricksburg.
+            </p>
+        </div>
+
+        <div class="transport-card">
+            <span>🚌</span>
+            <h3>Autobus</h3>
+            <p>
+                Pravidelné autobusové spojenie
+                s centrom Bricksburgu.
+            </p>
+        </div>
+
+        <div class="transport-card">
+            <span>🚕</span>
+            <h3>Taxi</h3>
+            <p>
+                Oficiálne taxi stanovište sa nachádza
+                pred terminálom.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="announcement">
+
+    <div class="announcement-icon">📢</div>
+
+    <div>
+        <span>LETISKOVÉ HLÁSENIE</span>
+        <p id="announcementText">
+            Vitajte na letisku Bratislava-Bricksburg.
+            Prajeme vám príjemnú cestu.
+        </p>
+    </div>
+
+    <button id="speakBtn" class="secondary-btn">
+        🔊 Prehrať
+    </button>
+
+</section>
+
+
+<section class="section contact-section" id="contact">
+
+    <div class="contact-box">
+
+        <div>
+            <span class="eyebrow">CONTACT</span>
+            <h2>BTB – Bratislava-Bricksburg Airport</h2>
+
+            <p>
+                Oficiálna informačná stránka fiktívneho letiska
+                Bratislava-Bricksburg.
+            </p>
+        </div>
+
+        <div class="contact-details">
+            <p>📍 Bratislava-Bricksburg</p>
+            <p>📞 +421 2 0000 0000</p>
+            <p>✉️ info@btb-airport.example</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section admin-section">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">LOCAL ADMIN</span>
+            <h2>Správa letov</h2>
+        </div>
+    </div>
+
+    <div class="admin-panel">
+
+        <div class="admin-row">
+
+            <input id="adminFlight" placeholder="Číslo letu">
+            <input id="adminDestination" placeholder="Destinácia">
+
+            <select id="adminType">
+                <option value="departure">Odlet</option>
+                <option value="arrival">Prílet</option>
+            </select>
+
+            <input id="adminTime" type="time">
+
+            <input id="adminGate" placeholder="Gate">
+
+            <select id="adminStatus">
+                <option>On Time</option>
+                <option>Boarding</option>
+                <option>Delayed</option>
+                <option>Cancelled</option>
+                <option>Departed</option>
+                <option>Landed</option>
+            </select>
+
+            <button class="primary-btn" id="addFlightBtn">
+                + Pridať let
+            </button>
+
+        </div>
+
+        <div class="admin-actions">
+            <button class="secondary-btn" id="resetFlightsBtn">
+                Obnoviť predvolené lety
+            </button>
+
+            <span id="adminMessage"></span>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="logo footer-logo">
+            <div class="logo-icon">✈</div>
+            <div>
+                <strong>BTB</strong>
+                <span>Bratislava-Bricksburg</span>
+            </div>
+        </div>
+
+        <div>
+            <p>© 2026 BTB – Bratislava-Bricksburg Airport</p>
+            <p>Fiktívny letiskový projekt</p>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<div class="flight-modal" id="flightModal">
+
+    <div class="modal-content">
+
+        <button class="modal-close" id="modalClose">×</button>
+
+        <span class="eyebrow">FLIGHT DETAILS</span>
+
+        <h2 id="modalFlightNumber">BTB000</h2>
+
+        <div class="modal-route">
+            <div>
+                <small>SMER</small>
+                <strong id="modalDestination">—</strong>
+            </div>
+
+            <div>
+                <small>ČAS</small>
+                <strong id="modalTime">—</strong>
+            </div>
+        </div>
+
+        <div class="modal-info">
+
+            <div>
+                <span>Aerolinka</span>
+                <strong id="modalAirline">—</strong>
+            </div>
+
+            <div>
+                <span>Gate</span>
+                <strong id="modalGate">—</strong>
+            </div>
+
+            <div>
+                <span>Typ</span>
+                <strong id="modalType">—</strong>
+            </div>
+
+            <div>
+                <span>Stav</span>
+                <strong id="modalStatus">—</strong>
+            </div>
+
+        </div>
+
+        <button class="primary-btn" id="modalSpeak">
+            🔊 Prečítať hlásenie
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
