@@ -13,7 +13,7 @@ const aerolines = [
         code: "BBA",
         name: "Bricksburg Airways",
         country: "Bricksburg",
-        description: "Hlavná letecká spoločnosť BTB"
+        description: "Test"
     },
     {
         code: "BA",
